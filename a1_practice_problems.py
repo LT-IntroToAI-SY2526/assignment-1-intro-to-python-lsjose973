@@ -47,8 +47,8 @@ def factorial(n: int) -> int:
         factorial of the passed in number
     """
     fact = 1
-    for i in range(n):
-        fact = fact * (i + 2)
+    for i in range(1, n + 1):
+        fact *= i
     return fact
 
     raise NotImplementedError("factorial")
@@ -64,10 +64,15 @@ def every_other(lst: List[T]) -> List[T]:
     Args:
         lst - a list of any (constrained by type T to be the same type as the returned
             list)
-
     Returns:
         a list of every of other item in the original list starting with the first
     """
+
+    lst_2 = []
+    for i in range(0, len(lst), 2):
+        lst_2.append(lst[i])
+    return lst_2
+    
     raise NotImplementedError("every_other")
 
 
@@ -81,6 +86,11 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
+    sum = 0
+    for i in lst:
+        sum += i
+    return sum
+
     raise NotImplementedError("sum_list")
 
 
@@ -93,6 +103,10 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
+    mean = 0
+    for i in lst:
+        mean += i
+    return mean / len(lst)
     raise NotImplementedError("mean")
 
 
@@ -108,6 +122,10 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
+    if len(lst) % 2 == 0:
+       return (lst[len(lst) // 2] + lst[len(lst) // 2 - 1]) / 2
+    else:
+        return lst[len(lst) // 2]
     raise NotImplementedError("median")
 
 
