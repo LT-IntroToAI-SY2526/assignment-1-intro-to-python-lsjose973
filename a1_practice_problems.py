@@ -148,6 +148,13 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
+    
+    while len(lst) > 2:
+        i += 2
+        i %= len(lst)
+        del lst[i]
+    return lst
+
     raise NotImplementedError("duck_duck_goose")
 
 
