@@ -42,46 +42,6 @@ I have some experience with Java. Can you create 5-7 practice problems that cove
 # =============================================================================
 
 """
-PROBLEM 1: Welcome Message Generator (Variables & Strings)
-Task: Write a program that asks the user for their name and age, then prints a welcome message.
-Example Input:
-name = "Alex"
-age = 16
-Example Output:
-Welcome, Alex! You are 16 years old.
-
-name = input("Enter name: ")
-age = int(input("Enter age: "))
-print(f"Welcome, {name}! You are {age} years old.)
-
-PROBLEM 2: Even or Odd Checker (Conditionals)
-Write a function check_even_odd(num) that takes an integer and prints whether it is even or odd.
-Ex Input:
-check_even_odd(7)
-Ex Output:
-7 is odd.
-
-def check_even_odd(n):
-    if n % 2 == 0:
-        print(n + "is odd")
-    else:
-        print(n + "is even")
-
-PROBLEM 3: Sum of First N Numbers (Loops)
-Task: Write a program that asks the user for a number n and calculates the sum of the first n natural numbers using a for loop.
-Example Input:
-Enter a number: 5
-Example Output:
-The sum of the first 5 numbers is 15.
-
-n = int(input("Enter number: "))
-sum = 0
-for i in range(1, n + 1):
-    sum += i
-return sum
-
-
-
 Example:
 Problem: Write a function called 'is_even' that takes an integer and returns 
 True if the number is even, False if it's odd.
@@ -90,6 +50,143 @@ Example inputs/outputs:
 - is_even(4) should return True
 - is_even(7) should return False
 """
+
+'''
+PROBLEM 1: Welcome Message Generator (Variables & Strings)
+Task: Write a program that asks the user for their name and age, then prints a welcome message.
+Example Input:
+name = "Alex"
+age = 16
+Example Output:
+Welcome, Alex! You are 16 years old.
+'''
+def greet():
+    name = "Lyle"
+    age = "17"
+    print(f"Welcome, {name}! You are {age} years old.")
+      
+'''
+PROBLEM 2: Even or Odd Checker (Conditionals)
+Write a function check_even_odd(num) that takes an integer and prints whether it is even or odd.
+Ex Input:
+check_even_odd(7)
+Ex Output:
+7 is odd.
+'''
+
+def check_even_odd(n):
+    if n % 2 == 0:
+        print(n + "is odd")
+    else:
+        print(n + "is even")
+
+'''
+PROBLEM 3: Sum of First N Numbers (Loops)
+Task: Write a program that asks the user for a number n and calculates the sum of the first n natural numbers using a for loop.
+Example Input:
+Enter a number: 5
+Example Output:
+The sum of the first 5 numbers is 15.
+'''
+def first_n(n):
+    n = int(input("Enter number: "))
+    sum = 0
+    for i in range(1, n + 1):
+        sum += i
+    return sum
+
+'''
+4. Password Strength Checker (Conditionals + Loops)
+Task: Write a function check_password_strength(password) that checks if a password is strong. A strong password:
+Is at least 8 characters long
+Contains at least one digit
+Contains at least one uppercase letter
+Example Input:
+check_password_strength("Python123")
+Example Output:
+Password is strong.
+'''
+def check_password_strength(password):
+    numbs = "0123456789"
+    has_numb = False
+    has_uppercase = False
+    has_8_chars = len(password) >= 8
+    for char in password:
+        if char in numbs:
+            has_numb = True
+    for char in password:
+        if char.isupper():
+            has_uppercase = True
+    return has_numb and has_uppercase and has_8_chars
+        
+"""
+Task: Write a function find_multiples(n, limit) that returns a list of all multiples of n up to limit.
+Example Input:
+find_multiples(3, 20)
+Example Output:
+[3, 6, 9, 12, 15, 18]
+"""
+def find_multiples(n, limit):
+    multiples = []
+    inc = n
+    while n <= limit:
+        multiples.append(n)
+        n += inc
+    return multiples
+    
+"""
+6. Grade Categorizer (Lists + Conditionals + Functions)
+Task: Write a function categorize_grades(grades) that takes a list of numerical grades and returns a list of letter grades:
+A: 90+
+B: 80–89
+C: 70–79
+D: 60–69
+F: <60
+Example Input:
+categorize_grades([95, 82, 67, 74, 58])
+Example Output:
+['A', 'B', 'D', 'C', 'F']
+"""
+
+def categorize_grades(grades):
+    lst = []
+    for grade in grades:
+        if grade >= 90:
+            lst.append("A")
+        elif grade >= 80 and grade < 90:
+            lst.append("B")
+        elif grade >= 70 and grade < 80:
+            lst.append("C")
+        elif grade >= 60 and grade < 70:
+            lst.append("D")
+        else:
+            lst.append("F")
+    return lst
+
+"""
+7. Prime Number Generator (Functions + Loops + Conditionals)
+Task: Write a function generate_primes(limit) that returns a list of all prime numbers up to limit.
+Example Input:
+generate_primes(20)
+Example Output:
+[2, 3, 5, 7, 11, 13, 17, 19]
+"""
+
+def generate_primes(limit):
+    lst = []
+    if limit < 2:
+        return lst
+    i = 2
+    while i < limit:
+        prime = True
+        for n in range(2, i):
+            if i % n == 0:
+                prime = False
+                break
+        if prime:
+            lst.append(i)
+        i += 1
+    return lst
 
 
 

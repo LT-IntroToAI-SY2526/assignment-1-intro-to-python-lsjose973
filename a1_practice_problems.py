@@ -33,7 +33,7 @@ def absolute(n: int) -> int:
     else:
         return n
     
-    raise NotImplementedError("absolute")
+
 
 
 def factorial(n: int) -> int:
@@ -51,7 +51,14 @@ def factorial(n: int) -> int:
         fact *= i
     return fact
 
-    raise NotImplementedError("factorial")
+    """
+    if n == 1 or n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+    """
+
+   
 
 
 T = TypeVar("T")
@@ -73,7 +80,7 @@ def every_other(lst: List[T]) -> List[T]:
         lst_2.append(lst[i])
     return lst_2
     
-    raise NotImplementedError("every_other")
+   
 
 
 def sum_list(lst: List[int]) -> int:
@@ -91,7 +98,7 @@ def sum_list(lst: List[int]) -> int:
         sum += i
     return sum
 
-    raise NotImplementedError("sum_list")
+   
 
 
 def mean(lst: List[int]) -> float:
@@ -107,7 +114,7 @@ def mean(lst: List[int]) -> float:
     for i in lst:
         mean += i
     return mean / len(lst)
-    raise NotImplementedError("mean")
+    
 
 
 def median(lst: List[int]) -> float:
@@ -126,7 +133,7 @@ def median(lst: List[int]) -> float:
        return (lst[len(lst) // 2] + lst[len(lst) // 2 - 1]) / 2
     else:
         return lst[len(lst) // 2]
-    raise NotImplementedError("median")
+   
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
@@ -148,14 +155,19 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
-    
+    # a, b, c, d, e, f
+    # a, b, d, e, f
+    # a, b, d, e
+    # a, b, e
+    # a, e,
+
     while len(lst) > 2:
         i += 2
         i %= len(lst)
         del lst[i]
     return lst
 
-    raise NotImplementedError("duck_duck_goose")
+    
 
 
 # this line causes the nested code to be skipped if the file is imported instead of run
