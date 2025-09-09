@@ -27,7 +27,6 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-
     if n < 0:
         return n * -1
     else:
@@ -160,7 +159,7 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     # a, b, d, e
     # a, b, e
     # a, e,
-
+    i = 0
     while len(lst) > 2:
         i += 2
         i %= len(lst)
