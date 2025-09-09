@@ -76,9 +76,9 @@ Ex Output:
 
 def check_even_odd(n):
     if n % 2 == 0:
-        print(n + "is odd")
+        print(f"{n} is even")
     else:
-        print(n + "is even")
+        print(f"{n} is odd") 
 
 '''
 PROBLEM 3: Sum of First N Numbers (Loops)
@@ -215,17 +215,34 @@ print(f"is_even(7): {is_even(7)}")  # Should print False
 
 print("Testing Problem 1:")
 # Add your tests here
-
+greet()
 print("\nTesting Problem 2:")
 # Add your tests here
-
+check_even_odd(3)
+check_even_odd(2)
 print("\nTesting Problem 3:")
 # Add your tests here
-
+print(first_n(5))
+print(first_n(10))
+print(first_n(6))
 print("\nTesting Problem 4:")
 # Add your tests here
-
+print(check_password_strength("IntroToAi123"))
+print(check_password_strength("hello"))
 print("\nTesting Problem 5:")
 # Add your tests here
+print(find_multiples(3, 20))
+print(find_multiples(2, 10))
+print(find_multiples(6, 64))
 
+print("\nTesting Problem 6:")
+
+print(categorize_grades([99, 94, 93, 34, 65, 79]))
+print(categorize_grades([99, 89, 79, 69, 59]))
+
+print("\nTesting Problem 7:")
+
+print(generate_primes(5))
+print(generate_primes(19))
+print(generate_primes(8))
 
