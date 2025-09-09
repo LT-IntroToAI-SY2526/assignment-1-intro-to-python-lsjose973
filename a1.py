@@ -189,8 +189,7 @@ def generate_primes(limit):
     return lst
 
 
-
-
+# test more problems regarding substrings, list slicing, 
 
 
 
