@@ -188,10 +188,42 @@ def generate_primes(limit):
         i += 1
     return lst
 
+"""
+Problem 8: Substring Extraction with Indexing
+Prompt: You’re given a string:
 
-# test more problems regarding substrings, list slicing, 
+python
+text = "pineapple"
+Write a function extract_sub(str, find) that checks if find exists in str. Returns true if yes, false if no
 
+"""
+def extract_sub(str, find):
+    fnd = False
+    for i in range(len(str) - len(find) + 1):
+        curr = str[i:i + len(find)]
+        if curr == find:
+            fnd = True
+    return fnd
 
+"""
+Problem 9: 📚 2. Chunk a List
+Function Name: chunk_list(lst, size)
+
+Prompt: Write a function that splits a list into chunks of a given size using slicing. Return a list of lists.
+
+Example:
+
+python
+chunk_list([1, 2, 3, 4, 5, 6], 2)  
+# → [[1, 2], [3, 4], [5, 6]]
+"""
+
+def chunk_list(lst, size):
+    result = []
+    for i in range(0, len(lst), size):
+        new_lst = lst[i:i + size]
+        result.append(new_lst)
+    return result
 
 
 
@@ -244,4 +276,13 @@ print("\nTesting Problem 7:")
 print(generate_primes(5))
 print(generate_primes(19))
 print(generate_primes(8))
+
+print("\nTesting Problem 8:")
+print(extract_sub("banana", "apple"))
+print(extract_sub("pineapple", "apple"))
+print(extract_sub("helloabcbye", "abc"))
+
+print("\nTesting Problem 9:")
+print(chunk_list([1,2,3,4,5,6], 2))
+print(chunk_list([3, 6, 9, 12, 15, 18, 21, 24, 27, 30], 3))
 
